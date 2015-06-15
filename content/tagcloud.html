@@ -1,0 +1,15 @@
+	<html>
+	<br></br>
+	
+	<?php
+        $query = mysqli_query($bd, "SELECT tag_description, multiplicity from `tag`");
+		$tagEcho = "";
+		
+		while ($data = mysqli_fetch_assoc($query)) {
+			$tagDesc = $data['tag_description'];
+			//$tagMult = " " + $data['multiplicity'];
+			$tagEcho = "<p>$tagDesc</p>";
+			echo $tagEcho;
+		}
+	?>
+	</html>
